@@ -1,0 +1,51 @@
+.user-list-box {
+  border: 1px solid #3a3a3a; /* Border around the box */
+  position: fixed;
+  top: 10px;
+  left: 35%;
+  width: 400px; /* Fixed width */
+  background-color: rgba(0, 0, 0, 0.221); /* Semi-transparent background (adjust alpha as needed) */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out elements */
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}
+
+.search-bar {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #525050;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #333;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #525050; /* Border between items */
+  transition: background-color 0.3s ease;
+}
+
+.user-item:hover {
+  background-color: #635f5f; /* Highlight background on hover */
+}
+
+.user-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-item span {
+  font-size: 16px;
+  color: #ffffff; /* Text color for user name */
+}

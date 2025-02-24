@@ -1,0 +1,240 @@
+/* Chat Wrapper */
+
+/* Background Image */
+
+
+/* Chat Container */
+.chat-container {
+  border: 1px solid #3a3a3a; /* Border around the box */
+
+  position: fixed;
+  top: 10px;
+  left: 35%;
+  width: 400px; /* Fixed width */
+  background-color: rgba(0, 0, 0, 0.221); /* Semi-transparent background (adjust alpha as needed) */
+  padding: 20px;
+  border-radius: 10px;
+  height: 90vh; /* Occupy 90% of the screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out elements */
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow for better visibility */
+}
+
+
+.chat-header{
+  color: #ffffff;
+}
+
+/* Navbar */
+
+
+/* Input Section */
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.input-field {
+  flex: 1; /* Take up remaining space */
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  
+  
+}
+
+
+
+
+.logout-btn {
+  background-color: #f44336; /* Red for logout */
+}
+
+.clear-chat-btn {
+  background-color: #9E9E9E; /* Grey for clear chat */
+}
+
+/* Message Section */
+.message {
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: flex-start; /* Align messages to the left */
+}
+
+.message.current-user {
+  justify-content: flex-end; /* Align the current user's message to the right */
+}
+
+.message-content {
+  display: flex;
+}
+
+/* Message Bubble */
+.message .message-bubble {
+  background-color: hsl(0, 0%, 54%); /* Gray background */
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  word-wrap: break-word;
+  white-space: normal;
+  height: auto;
+  max-width: 250px;
+  box-sizing: border-box;
+}
+
+/* Current User's Message Bubble */
+.message.current-user .message-bubble {
+  background-color: hwb(215 0% 0%); /* Blueish background */
+  max-width: 250px;
+  box-sizing: border-box;
+}
+
+/* Avatar */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.message.current-user .user-avatar {
+  order: 1; /* Make the avatar appear after the message bubble */
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* Message Name */
+.message-name {
+  text-align: right; /* Align name to the right for current user */
+  font-weight: bold;
+  font-size: 12px;
+  color: #242524;
+  margin-bottom: -13px; /* Small negative margin for better spacing */
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+/* Message Text */
+.message-text {
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 1px;
+  text-align: left;
+}
+.message.current-user .message-text {
+  text-align: right; /* Align current user's message text to the right */
+}
+
+/* Message Time */
+.message-time {
+  font-size: 10px;
+  color: #1f1e1e;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: right;
+}
+.message.current-user .message-time {
+  text-align: left; /* Align current user's message time to the left */
+}
+
+/* Message Section with Scrolling */
+.messages-section {
+  margin-bottom: 20px;
+  
+  overflow-y: scroll;
+  background: 
+    linear-gradient(to top, #8d8585, #6c6464), /* Gradient background */
+    url('images/chat.jpg'); /* Background image for chat */
+  background-size: cover;
+  background-position: center;
+  height: 500px; /* Set height */
+  border-radius: 15px; /* Rounded corners */
+  background-blend-mode: overlay; /* Blend the gradient with the background image */
+}
+
+/* Hide the scrollbar but keep the scrolling functionality */
+.messages-section::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.messages-section {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Scroll to Bottom Button */
+.scroll-to-bottom {
+  font-size: 20px;
+  cursor: pointer;
+}
+/* Add styles for burger menu and dropdown */
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.burger-line {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 5px 0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  color: #fff;
+  background-color: #444;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background-color: #555;
+}
+
+.back-arrow {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #007BFF;
+  margin-right: 10px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+

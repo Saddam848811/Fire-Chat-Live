@@ -1,0 +1,102 @@
+/* Add styles for the video background */
+.auth-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Makes the video cover the entire background */
+  z-index: -1;  /* Ensure video is behind the content */
+}
+
+.auth-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);  /* Optional: Darken the background for readability */
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.auth-form h1 {
+  font-size: 2.1rem; /* Adjust the font size */
+  background: linear-gradient(90deg, #FFA500, #FF6347); /* Gradient from orange to tomato red */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  color: transparent; /* Makes the text color transparent to show the gradient */
+  text-shadow: 
+    0 0 10px rgba(255, 165, 0, 0.8), /* Glowing orange */
+    0 0 20px rgba(255, 99, 71, 0.6), /* Stronger glowing tomato red */
+    0 0 30px rgba(255, 99, 71, 0.4); /* Add extra glow around the text */
+  font-weight: bold; /* Bold text for more impact */
+  letter-spacing: 1px; /* Add spacing between letters for style */
+  text-transform: uppercase; /* Make the text uppercase for emphasis */
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Smooth animation on hover */
+  padding: 10px 0; /* Add padding for spacing */
+}
+
+.auth-form h1:hover {
+  transform: scale(1.1); /* Slightly increase the text size on hover */
+  text-shadow: 
+    0 0 15px rgba(255, 165, 0, 1), /* Intensify glowing orange */
+    0 0 50px rgba(255, 99, 71, 1), /* Stronger glowing tomato red */
+    0 0 60px rgba(255, 99, 71, 0.8); /* Extra bright outer glow */
+}
+
+
+
+.auth-form p {
+  color: #FFA500; /* Orange color */
+  font-family: 'Arial', sans-serif; /* Choose a sleek font */
+  font-size: 10px; /* Adjust the font size for better readability */
+  font-weight: bold; /* Make the text bolder */
+  letter-spacing: 1px; /* Add spacing between the letters for a more stylish look */
+  text-transform: uppercase; /* Transform text to uppercase for emphasis */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Optional: Adds a shadow for a glowing effect */
+  line-height: 1.5; /* Adjust line height for better spacing */
+  transition: transform 0.3s ease-in-out; /* Smooth animation on hover */
+}
+
+.auth-form p:hover {
+  transform: scale(1.1); /* Slightly increase the text size on hover */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); /* Intensify shadow on hover */
+}
+
+
+
+.auth-button {
+  padding: 10px 20px;
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.auth-button:hover {
+  background-color: #357AE8;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Lottie animation container */
+.lottie-container {
+  margin: 20px auto;
+  width: 100px;  /* Adjust this value to change the size */
+  height: 100px; /* Adjust this value to change the size */
+}

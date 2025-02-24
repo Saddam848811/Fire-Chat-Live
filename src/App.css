@@ -1,0 +1,72 @@
+/* Example: Applying background image to the body */
+body {
+  background-image: url('./public/images/black.jpg'); /* Path to your downloaded image */
+  background-size: cover; /* Ensures the image covers the whole page */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Ensures the background image covers the full viewport height */
+  margin: 0; /* Remove default margin */
+  box-sizing: border-box; /* Ensure padding and borders are included in width/height calculations */
+}
+
+/* Main app wrapper */
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and borders in width/height calculations */
+}
+
+/* App container that houses both the user list and chat */
+.app-container {
+  width: 50%; /* Set a width for the entire app */
+  height: 90vh; /* Adjust the height of the app container */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  overflow: hidden; /* Prevent overflow to avoid overlap */
+  box-sizing: border-box; /* Ensure padding and borders are included in width/height calculations */
+}
+
+/* Style for individual components inside .app-container */
+.component {
+  flex: 1; /* Each component takes up available space equally */
+  overflow: auto; /* Allow scrolling if content overflows */
+}
+
+/* Responsive Styles: Adjustments for smaller screen sizes */
+@media (max-width: 768px) {
+  .app-container {
+    width: 90%; /* Full width on smaller screens */
+    height: 80vh; /* Adjust height on smaller screens */
+  }
+
+  .app-wrapper {
+    padding: 10px; /* Add some padding around the app wrapper on mobile */
+  }
+
+  /* Adjust the flex direction for very small screens */
+  .app-container {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .component {
+    padding: 10px; /* Add padding to components for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    width: 100%; /* Full width on very small screens */
+    height: 100vh; /* Adjust height for very small screens */
+  }
+  
+  .app-wrapper {
+    flex-direction: column; /* Stack wrapper elements vertically */
+  }
+
+  .component {
+    padding: 5px; /* Reduce padding on extra small screens */
+  }
+}

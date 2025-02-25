@@ -228,14 +228,14 @@
     width: 100%;
     left: 0;
     top: 0;
-    height: 100vh; /* Full height */
+    height: calc(100vh - 60px); /* Adjusted height to leave space at the bottom */
     border-radius: 0;
     padding: 10px;
     box-sizing: border-box;
   }
 
   .messages-section {
-    height: calc(100vh - 120px); /* Adjust to leave space for header and input */
+    height: calc(100vh - 120px); /* Adjusted to leave space for header and input, with some gap at the bottom */
     overflow-y: scroll;
   }
 

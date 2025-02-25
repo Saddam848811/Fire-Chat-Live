@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import UserList from './UserList';
-import Chat from './Chat';
+import Chat from './chat';
 import { auth } from './firebase';
-import './app.css';
-import Auth from './Auth';
+import './App.css';
+import Auth from './auth';
 
 const App = () => {
   const [user, setUser] = useState(null);

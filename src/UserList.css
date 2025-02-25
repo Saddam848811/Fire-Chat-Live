@@ -1,17 +1,18 @@
+/* User List Styles */
 .user-list-box {
-  border: 1px solid #3a3a3a; /* Border around the box */
+  border: 1px solid #3a3a3a;
   position: fixed;
   top: 10px;
   left: 35%;
-  width: 400px; /* Fixed width */
-  background-color: rgba(0, 0, 0, 0.221); /* Semi-transparent background (adjust alpha as needed) */
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.221);
   padding: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Space out elements */
+  justify-content: space-between;
   z-index: 1;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .search-bar {
@@ -30,12 +31,12 @@
   align-items: center;
   padding: 10px;
   cursor: pointer;
-  border-bottom: 1px solid #525050; /* Border between items */
+  border-bottom: 1px solid #525050;
   transition: background-color 0.3s ease;
 }
 
 .user-item:hover {
-  background-color: #635f5f; /* Highlight background on hover */
+  background-color: #635f5f;
 }
 
 .user-avatar {
@@ -47,5 +48,64 @@
 
 .user-item span {
   font-size: 16px;
-  color: #ffffff; /* Text color for user name */
+  color: #ffffff;
 }
+
+/* Media Queries for Responsiveness */
+
+/* For larger screens (PC) */
+@media (min-width: 1024px) {
+  .user-list-box {
+    width: 400px;
+    top: 10px;
+    left: 35%;
+  }
+}
+
+/* For tablet screens */
+@media (max-width: 1024px) {
+  .user-list-box {
+    width: 90%;
+    left: 5%;
+  }
+
+  .search-bar {
+    font-size: 14px;
+  }
+
+  .user-item span {
+    font-size: 14px;
+  }
+}
+
+/* For mobile screens */
+/* For mobile screens */
+@media (max-width: 768px) {
+  .user-list-box {
+    width: 100%; /* Make sure it takes the full width */
+    left: 0; /* Align the box to the left */
+    top: 10px; /* Keep some space from the top */
+    padding: 10px; /* Reduce padding for better fit */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+  }
+
+  .search-bar {
+    font-size: 14px;
+  }
+
+  .user-item span {
+    font-size: 14px;
+  }
+}
+
+/* For very small screens (phones) */
+@media (max-width: 480px) {
+  .user-list-box {
+    width: 100%; /* Full width for very small screens */
+    left: 0;
+    top: 0;
+    padding: 10px;
+    box-sizing: border-box; /* Ensure no overflow */
+  }
+}
+

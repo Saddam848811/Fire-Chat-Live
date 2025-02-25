@@ -1,43 +1,51 @@
-/* Chat Wrapper */
-
-/* Background Image */
-
+/* Base Chat Wrapper */
 
 /* Chat Container */
 .chat-container {
-  border: 1px solid #3a3a3a; /* Border around the box */
-
+  border: 1px solid #3a3a3a;
   position: fixed;
   top: 10px;
-  left: 35%;
-  width: 400px; /* Fixed width */
-  background-color: rgba(0, 0, 0, 0.221); /* Semi-transparent background (adjust alpha as needed) */
+  left: 30%;
+  width: 400px; /* Fixed width for PC */
+  background-color: rgba(0, 0, 0, 0.221);
   padding: 20px;
   border-radius: 10px;
-  height: 90vh; /* Occupy 90% of the screen height */
+  height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Space out elements */
+  justify-content: space-between;
   z-index: 1;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow for better visibility */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-
-.chat-header{
-  color: #ffffff;
+/* Header */
+.chat-header {
+  color: #000000;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Ensure burger menu is positioned relative to this */
 }
 
-/* Navbar */
-
+/* Back Arrow */
+.back-arrow {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #007BFF;
+  margin-right: 10px;
+}
 
 /* Input Section */
 .input-container {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .input-field {
-  flex: 1; /* Take up remaining space */
+  flex: 1;
   padding: 10px;
   font-size: 16px;
   border: none;
@@ -50,39 +58,26 @@
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;
-  
-  
-}
-
-
-
-
-.logout-btn {
-  background-color: #f44336; /* Red for logout */
-}
-
-.clear-chat-btn {
-  background-color: #9E9E9E; /* Grey for clear chat */
+  padding: 10px;
 }
 
 /* Message Section */
 .message {
   display: flex;
   margin-bottom: 5px;
-  justify-content: flex-start; /* Align messages to the left */
+  justify-content: flex-start;
 }
 
 .message.current-user {
-  justify-content: flex-end; /* Align the current user's message to the right */
+  justify-content: flex-end;
 }
 
 .message-content {
   display: flex;
 }
 
-/* Message Bubble */
-.message .message-bubble {
-  background-color: hsl(0, 0%, 54%); /* Gray background */
+.message-bubble {
+  background-color: hsl(0, 0%, 54%);
   color: white;
   padding: 4px 8px;
   border-radius: 12px;
@@ -91,53 +86,44 @@
   height: auto;
   max-width: 250px;
   box-sizing: border-box;
+  margin-top: 10px;
+
 }
 
-/* Current User's Message Bubble */
 .message.current-user .message-bubble {
-  background-color: hwb(215 0% 0%); /* Blueish background */
+  background-color: hwb(215 0% 0%);
   max-width: 250px;
   box-sizing: border-box;
+  margin-top: 10px;
 }
 
-/* Avatar */
 .user-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-left: 8px;
   margin-right: 8px;
+  margin-top: 10px;
+
 }
 
-.message.current-user .user-avatar {
-  order: 1; /* Make the avatar appear after the message bubble */
-  margin-left: 8px;
-  margin-right: 8px;
-}
-
-/* Message Name */
 .message-name {
-  text-align: right; /* Align name to the right for current user */
+  text-align: right;
   font-weight: bold;
   font-size: 12px;
   color: #242524;
-  margin-bottom: -13px; /* Small negative margin for better spacing */
+  margin-bottom: -13px;
   align-self: flex-end;
   margin-left: auto;
 }
 
-/* Message Text */
 .message-text {
   color: #ffffff;
   font-size: 14px;
   margin-bottom: 1px;
   text-align: left;
 }
-.message.current-user .message-text {
-  text-align: right; /* Align current user's message text to the right */
-}
 
-/* Message Time */
 .message-time {
   font-size: 10px;
   color: #1f1e1e;
@@ -145,42 +131,37 @@
   margin-bottom: 0;
   text-align: right;
 }
-.message.current-user .message-time {
-  text-align: left; /* Align current user's message time to the left */
-}
 
-/* Message Section with Scrolling */
 .messages-section {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   
   overflow-y: scroll;
   background: 
-    linear-gradient(to top, #8d8585, #6c6464), /* Gradient background */
-    url('/assets/chat.jpg'); /* Background image for chat */
+    linear-gradient(to top, #8d8585, #6c6464), 
+    url('/assets/chat.jpg');
   background-size: cover;
   background-position: center;
-  height: 500px; /* Set height */
-  border-radius: 15px; /* Rounded corners */
-  background-blend-mode: overlay; /* Blend the gradient with the background image */
+  height: 500px;
+  border-radius: 15px;
+  background-blend-mode: overlay;
 }
 
-/* Hide the scrollbar but keep the scrolling functionality */
 .messages-section::-webkit-scrollbar {
   width: 0px;
   height: 0px;
 }
 
 .messages-section {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Scroll to Bottom Button */
 .scroll-to-bottom {
   font-size: 20px;
   cursor: pointer;
 }
-/* Add styles for burger menu and dropdown */
+
+/* Burger Menu */
 .burger-menu {
   display: flex;
   flex-direction: column;
@@ -188,15 +169,17 @@
   position: absolute;
   top: 10px;
   right: 20px;
+  z-index: 2; /* Ensure it stays above all other elements */
 }
 
 .burger-line {
   width: 30px;
-  height: 4px;
+  height: 3px;
   background-color: #fff;
-  margin: 5px 0;
+  margin: 3px 0;
 }
 
+/* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
   top: 40px;
@@ -221,20 +204,98 @@
   background-color: #555;
 }
 
-.back-arrow {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #007BFF;
-  margin-right: 10px;
+/* Media Queries for Responsiveness */
+
+/* For small devices (Mobile - Android) */
+@media screen and (max-width: 600px) {
+  .chat-container {
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    border-radius: 0;
+    padding: 10px;
+    box-sizing: border-box; /* Make sure padding doesn't push elements out of the viewport */
+  }
+
+  .input-container {
+    flex-direction: row; /* Keep the input and button in a row */
+    align-items: center;
+    gap: 10px; /* Space between input and button */
+  }
+
+  .input-field {
+    margin-right: 0;
+    margin-bottom: 0; /* No bottom margin */
+  }
+
+  .button {
+    width: auto;
+    padding: 10px;
+  }
+
+  .messages-section {
+    height: calc(100vh - 140px); /* Adjust to leave space for header and input */
+  }
+
+  .burger-menu {
+    top: 10px; /* Keep the burger menu at the top right */
+    right: 15px; /* Adjust it to be fully inside the screen */
+  }
+
+  .message-name {
+    font-size: 10px;
+  }
+
+  .message-text {
+    font-size: 12px;
+  }
+
+  .message-time {
+    font-size: 8px;
+  }
 }
 
-.chat-header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+
+/* For Tablets (Medium devices) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .chat-container {
+    width: 80%;
+    left: 10%;
+    top: 10px;
+    height: 90vh;
+  }
+
+  .input-container {
+    flex-direction: row;
+  }
+
+  .button {
+    width: 150px;
+  }
+
+  .messages-section {
+    height: 450px;
+  }
 }
 
+/* For Large Devices (PC / Desktop) */
+@media screen and (min-width: 1025px) {
+  .chat-container {
+    width: 400px; /* Fixed width for larger screens */
+    left: 35%;
+    height: 90vh;
+  }
 
+  .input-container {
+    flex-direction: row;
+  }
 
+  .button {
+    width: auto;
+  }
+
+  .messages-section {
+    height: 500px;
+  }
+}

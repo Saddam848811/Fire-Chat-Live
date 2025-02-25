@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { auth, db } from './firebase';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { setDoc, doc, addDoc, collection } from 'firebase/firestore';
@@ -66,20 +66,7 @@ const Auth = ({ setUser }) => {
   };
 
   // Fetch users to display in the user list (Simulating user data here)
-  useEffect(() => {
-    // Simulate fetching users (replace with actual Firestore fetching)
-    const sampleUsers = [
-      { id: '1', name: 'User 1' },
-      { id: '2', name: 'User 2' },
-      { id: '3', name: 'User 3' },
-      { id: '4', name: 'User 4' },
-      { id: '5', name: 'User 5' },
-    ];
-    setUsers(sampleUsers);
-
-    // Ensure the chat container height is recalculated on mount
-    window.dispatchEvent(new Event("resize"));
-  }, []);
+ 
 
   return (
     <div className="auth-container" onClick={playSound}>

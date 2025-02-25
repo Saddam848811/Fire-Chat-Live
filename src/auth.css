@@ -5,7 +5,7 @@ html, body {
   padding: 0;
 }
 
-/* Auth Container with 10% space from bottom */
+/* Auth Container with 20% space from bottom */
 .auth-container {
   position: relative;
   width: 100%;
@@ -13,7 +13,7 @@ html, body {
   overflow: hidden;
 }
 
-/* For all screens, leave 10% space from bottom */
+/* For all screens, leave 20% space from bottom */
 .auth-form {
   position: absolute;
   top: 50%;
@@ -25,13 +25,13 @@ html, body {
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  bottom: 10%;  /* This ensures 10% space from the bottom */
+  bottom: 20%;  /* This ensures 20% space from the bottom */
 }
 
 /* Adjustments for mobile, tablet, and desktop */
 @media screen and (max-width: 768px) {
   .auth-form {
-    bottom: 10%;
+    bottom: 20%;
   }
 }
 
@@ -40,7 +40,7 @@ html, body {
 /* For larger screens (PC) */
 @media (min-width: 1024px) {
   .chat-container {
-    height: calc(100vh - 10%); /* For larger screens, 10% space from the bottom */
+    height: calc(100vh - 20%); /* For larger screens, 20% space from the bottom */
     overflow-y: auto;
   }
 }
@@ -48,14 +48,14 @@ html, body {
 /* For tablet screens */
 @media (max-width: 1024px) {
   .chat-container {
-    height: calc(100vh - 10%); /* 10% space on tablet */
+    height: calc(100vh - 20%); /* 20% space on tablet */
   }
 }
 
 /* For mobile screens */
 @media (max-width: 768px) {
   .chat-container {
-    height: calc(100vh - 10%); /* 10% space on mobile */
+    height: calc(100vh - 20%); /* 20% space on mobile */
   }
 }
 
@@ -63,7 +63,7 @@ html, body {
 @media (max-width: 480px) {
   .auth-form {
     padding: 5px;
-    bottom: 10%;
+    bottom: 20%;
   }
 
   .auth-form h1 {
@@ -75,26 +75,68 @@ html, body {
   }
 }
 
-/* User List Container */
-.user-list-container {
-  max-height: 200px; /* Adjust as needed */
-  overflow-y: auto; /* Allows scrolling */
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+/* Styling for the background video */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;  /* Ensure the video stays behind the content */
 }
 
-.user-list-container::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Opera */
+/* Styling for the Lottie container */
+.lottie-container {
+  margin: 20px 0;
 }
 
-/* User Item */
-.user-item {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  color: #fff;
-  font-size: 14px;
+/* Styling for the button */
+.auth-button {
+  background-color: #ff8c00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
+.auth-button:hover {
+  background-color: #e07a00;
+}
+
+/* Styling for error message */
 .error {
   color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Styling for the user list container */
+.user-list-container {
+  margin-top: 20px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.user-item {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+.user-item:hover {
+  background-color: #444;
+}
+.auth-form h1 {
+  font-size: 2rem;
+  background: linear-gradient(to right, #f99625, #e2705c, #ff8c00); /* Fire gradient */
+  -webkit-background-clip: text; /* This ensures the gradient is applied to the text */
+  color: transparent; /* Make text transparent to show the gradient */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(180, 113, 113, 0.4); /* Add shadow for better visibility */
 }

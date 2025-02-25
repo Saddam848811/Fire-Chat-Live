@@ -12,7 +12,7 @@ const Auth = ({ setUser }) => {
   const [error, setError] = useState(null);
 
   // Define the page load sound here
-  const pageLoadSound = new Audio('/public/assets/fire.mp3');  // Assuming sound is in the public/sounds folder
+  const pageLoadSound = new Audio('/assets/fire.mp3');  // Assuming sound is in the public/sounds folder
 
   // This function will be called after user clicks anything to start the sound
   const playSound = () => {
@@ -68,7 +68,7 @@ const Auth = ({ setUser }) => {
     <div className="auth-container" onClick={playSound}>
       {/* Video background */}
       <video className="background-video" autoPlay loop muted>
-        <source src="public/videos/resident.mp4" type="video/mp4" />
+        <source src="assets/resident.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

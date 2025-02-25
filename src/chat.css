@@ -156,7 +156,7 @@
   overflow-y: scroll;
   background: 
     linear-gradient(to top, #8d8585, #6c6464), /* Gradient background */
-    url('images/chat.jpg'); /* Background image for chat */
+    url('/assets/chat.jpg'); /* Background image for chat */
   background-size: cover;
   background-position: center;
   height: 500px; /* Set height */

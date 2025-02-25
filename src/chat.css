@@ -10,13 +10,14 @@
   background-color: rgba(0, 0, 0, 0.221);
   padding: 20px;
   border-radius: 10px;
-  height: 90vh;
+  height: 90vh; /* Fixed height for desktop */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 /* Header */
@@ -87,7 +88,6 @@
   max-width: 250px;
   box-sizing: border-box;
   margin-top: 10px;
-
 }
 
 .message.current-user .message-bubble {
@@ -104,7 +104,6 @@
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 10px;
-
 }
 
 .message-name {
@@ -134,7 +133,6 @@
 
 .messages-section {
   margin-bottom: 10px;
-  
   overflow-y: scroll;
   background: 
     linear-gradient(to top, #8d8585, #6c6464), 
@@ -208,25 +206,36 @@
 
 /* For small devices (Mobile - Android) */
 @media screen and (max-width: 600px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   .chat-container {
     width: 100%;
     left: 0;
     top: 0;
-    height: 100vh;
+    height: 100vh; /* Full height */
     border-radius: 0;
     padding: 10px;
-    box-sizing: border-box; /* Make sure padding doesn't push elements out of the viewport */
+    box-sizing: border-box;
+  }
+
+  .messages-section {
+    height: calc(100vh - 120px); /* Adjust to leave space for header and input */
+    overflow-y: scroll;
   }
 
   .input-container {
-    flex-direction: row; /* Keep the input and button in a row */
+    flex-direction: row;
     align-items: center;
-    gap: 10px; /* Space between input and button */
+    gap: 10px;
   }
 
   .input-field {
     margin-right: 0;
-    margin-bottom: 0; /* No bottom margin */
+    margin-bottom: 0;
   }
 
   .button {
@@ -234,13 +243,9 @@
     padding: 10px;
   }
 
-  .messages-section {
-    height: calc(100vh - 140px); /* Adjust to leave space for header and input */
-  }
-
   .burger-menu {
-    top: 10px; /* Keep the burger menu at the top right */
-    right: 15px; /* Adjust it to be fully inside the screen */
+    top: 10px;
+    right: 15px;
   }
 
   .message-name {
@@ -256,14 +261,20 @@
   }
 }
 
-
 /* For Tablets (Medium devices) */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .chat-container {
     width: 80%;
     left: 10%;
     top: 10px;
-    height: 90vh;
+    height: 100vh; /* Full height */
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .messages-section {
+    height: calc(100vh - 150px); /* Adjust for header/input section */
+    overflow-y: scroll;
   }
 
   .input-container {
@@ -272,10 +283,6 @@
 
   .button {
     width: 150px;
-  }
-
-  .messages-section {
-    height: 450px;
   }
 }
 
@@ -287,15 +294,7 @@
     height: 90vh;
   }
 
-  .input-container {
-    flex-direction: row;
-  }
-
-  .button {
-    width: auto;
-  }
-
   .messages-section {
-    height: 500px;
+    height: calc(90vh - 140px); /* Adjust for header/input */
   }
 }

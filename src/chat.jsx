@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Lottie from 'react-lottie';  // Import Lottie for the animation
 import { db, auth } from './firebase';
 import { collection, addDoc, onSnapshot, query, orderBy, limit, deleteDoc, doc, getDocs } from 'firebase/firestore';
-import './chat.css';
+import './chat1.css';
 import { format } from 'date-fns';
 import animationData from '/public/videos/bird.json'; // Ensure the correct path
 

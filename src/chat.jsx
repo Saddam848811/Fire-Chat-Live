@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Lottie from 'react-lottie';  // Import Lottie for the animation
 import { db, auth } from './firebase';
 import { collection, addDoc, onSnapshot, query, orderBy, limit, deleteDoc, doc, getDocs } from 'firebase/firestore';
-import './chat1.css';
+import './chat.css';
 import { format } from 'date-fns';
 import animationData from '/public/videos/bird.json'; // Ensure the correct path
 
@@ -156,7 +156,7 @@ const Chat = ({ setUser, chatPartner, setViewingChat }) => {
             &larr;
           </button>
 
-          <h2>Chat with {chatPartner.name}</h2>
+          <h2>{chatPartner.name}--(◕‿↼)</h2>
 
           {/* Burger Menu Icon */}
           <div className="burger-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -215,7 +215,7 @@ const Chat = ({ setUser, chatPartner, setViewingChat }) => {
     height={50}
     width={50}
     style={{
-      transform: 'scale(3)', // Make it larger
+      transform: 'scale(6)', // Make it larger
       transformOrigin: 'center',
       maxWidth: '100%',
       maxHeight: '100%',

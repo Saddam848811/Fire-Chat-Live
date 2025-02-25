@@ -22,7 +22,7 @@
 
 /* Header */
 .chat-header {
-  color: #000000;
+  color: #b6b4b2;
   justify-content: space-between;
   align-items: center;
   position: relative; /* Ensure burger menu is positioned relative to this */
@@ -54,12 +54,24 @@
   margin-right: 10px;
 }
 
+/* Make Send Message Button Round */
 .button {
   background-color: #4CAF50;
   color: rgb(255, 255, 255);
   border: none;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 50%; /* Make it round */
+  padding: 15px; /* Increase padding to make it round */
+  width: 50px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height to make it circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #45a049;
 }
 
 /* Message Section */
@@ -239,8 +251,8 @@
   }
 
   .button {
-    width: auto;
-    padding: 10px;
+    width: 50px; /* Adjust button size on mobile */
+    height: 50px;
   }
 
   .burger-menu {
@@ -282,7 +294,8 @@
   }
 
   .button {
-    width: 150px;
+    width: 50px;
+    height: 50px;
   }
 }
 

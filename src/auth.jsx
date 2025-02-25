@@ -64,6 +64,11 @@ const Auth = ({ setUser }) => {
     },
   };
 
+  useEffect(() => {
+    // Ensure the chat container height is recalculated on mount
+    window.dispatchEvent(new Event("resize"));
+  }, []);
+
   return (
     <div className="auth-container" onClick={playSound}>
       {/* Video background */}

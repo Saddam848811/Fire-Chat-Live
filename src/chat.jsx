@@ -5,6 +5,8 @@ import { collection, addDoc, onSnapshot, query, orderBy, limit, deleteDoc, doc, 
 import './chat.css';
 import { format } from 'date-fns';
 import animationData from '/public/videos/bird.json'; // Ensure the correct path
+import fireAnimationData from '/public/videos/fire.json'; // Assuming your Lottie JSON file is named fireAnimation.json
+
 
 
 // Import Lottie animation JSON
@@ -206,22 +208,16 @@ const Chat = ({ setUser, chatPartner, setViewingChat }) => {
           
           {/* Send Button with Lottie Animation */}
           <button onClick={sendMessage} className="button">
-  <Lottie
-    options={{
-      animationData: animationData, // Your Lottie JSON data
-      autoplay: true, // Ensures the animation starts automatically
-      loop: true, // Ensures the animation loops
-    }}
-    height={50}
-    width={50}
-    style={{
-      transform: 'scale(6)', // Make it larger
-      transformOrigin: 'center',
-      maxWidth: '100%',
-      maxHeight: '100%',
-    }}
-  />
+  {/* Lottie Animation for Send Button */}
+  <Lottie options={{
+    loop: true, // Ensure the animation doesn't loop
+    autoplay: true, // Play automatically
+    animationData: fireAnimationData, // Provide the animation data
+    rendererSettings: {
+    },
+  }}  style={{ transform: 'scale(2)' }} />
 </button>
+
 
 
 

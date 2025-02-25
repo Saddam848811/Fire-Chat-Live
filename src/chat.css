@@ -47,7 +47,7 @@
 
 /* Make Send Message Button Round */
 .button {
-  background-color: #4CAF50;
+  background-color: #686b68;
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 50%; /* Make it round */
@@ -62,7 +62,7 @@
 }
 
 .button:hover {
-  background-color: #45a049;
+  background-color: #000000;
 }
 
 /* Message Section */

@@ -22,8 +22,8 @@ const Chat = ({ setUser, chatPartner, setViewingChat }) => {
   const chatContainerRef = useRef(null);
   const [currentChat, setCurrentChat] = useState(null);  // To track the active chat
 
-  const messageSentSound = new Audio('/public/send.mp3');
-  const messageReceivedSound = new Audio('/public/rec.mp3');
+  const messageSentSound = new Audio('/public/assets/send.mp3');
+  const messageReceivedSound = new Audio('/public/assets/rec.mp3');
 
   messageSentSound.preload = 'auto';
   messageReceivedSound.preload = 'auto';
@@ -118,7 +118,7 @@ const Chat = ({ setUser, chatPartner, setViewingChat }) => {
     const chatId = getChatId(user.uid, chatPartner.id);
     const messagesRef = collection(db, 'privateChats', chatId, 'messages');
   
-    const deleteSound = new Audio('/public/delete.mp3');
+    const deleteSound = new Audio('/public/assets/delete.mp3');
   
     try {
       deleteSound.play().catch((error) => console.error("Error playing delete sound:", error));

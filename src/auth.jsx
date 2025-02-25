@@ -12,7 +12,7 @@ const Auth = ({ setUser }) => {
   const [error, setError] = useState(null);
 
   // Define the page load sound here
-  const pageLoadSound = new Audio('/public/fire.mp3');  // Assuming sound is in the public/sounds folder
+  const pageLoadSound = new Audio('/public/assets/fire.mp3');  // Assuming sound is in the public/sounds folder
 
   // This function will be called after user clicks anything to start the sound
   const playSound = () => {

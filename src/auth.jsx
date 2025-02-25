@@ -10,6 +10,7 @@ import fireAnimationData from '/public/videos/fire.json'; // Assuming your Lotti
 
 const Auth = ({ setUser }) => {
   const [error, setError] = useState(null);
+  const [users, setUsers] = useState([]); // Store the list of users
 
   // Define the page load sound here
   const pageLoadSound = new Audio('/assets/fire.mp3');  // Assuming sound is in the public/sounds folder
@@ -64,7 +65,18 @@ const Auth = ({ setUser }) => {
     },
   };
 
+  // Fetch users to display in the user list (Simulating user data here)
   useEffect(() => {
+    // Simulate fetching users (replace with actual Firestore fetching)
+    const sampleUsers = [
+      { id: '1', name: 'User 1' },
+      { id: '2', name: 'User 2' },
+      { id: '3', name: 'User 3' },
+      { id: '4', name: 'User 4' },
+      { id: '5', name: 'User 5' },
+    ];
+    setUsers(sampleUsers);
+
     // Ensure the chat container height is recalculated on mount
     window.dispatchEvent(new Event("resize"));
   }, []);
@@ -86,6 +98,15 @@ const Auth = ({ setUser }) => {
         {error && <p className="error">{error}</p>}
         <p>"The Easiest Platform to Connect and Chat Just Using Your 'Google' ID !"</p>
         <button className="auth-button" onClick={handleGoogleSignIn}>Sign in with Google</button>
+
+        {/* User List */}
+        <div className="user-list-container">
+          {users.map((user) => (
+            <div key={user.id} className="user-item">
+              <p>{user.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

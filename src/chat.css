@@ -28,16 +28,6 @@
   position: relative; /* Ensure burger menu is positioned relative to this */
 }
 
-/* Back Arrow */
-.back-arrow {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #007BFF;
-  margin-right: 10px;
-}
-
 /* Input Section */
 .input-container {
   display: flex;
@@ -88,7 +78,14 @@
 .message-content {
   display: flex;
 }
-
+.back-arrow {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #007BFF;
+  margin-right: 10px;
+}
 .message-bubble {
   background-color: hsl(0, 0%, 54%);
   color: white;
@@ -109,6 +106,7 @@
   margin-top: 10px;
 }
 
+/* Profile Image - User Avatar */
 .user-avatar {
   width: 40px;
   height: 40px;
@@ -116,7 +114,11 @@
   margin-left: 8px;
   margin-right: 8px;
   margin-top: 10px;
+  position: relative; /* Ensures it's part of the normal flow, not fixed */
+  top: 0; /* Adjust as needed */
+  left: 0; /* Adjust as needed */
 }
+
 
 .message-name {
   text-align: right;
@@ -151,6 +153,7 @@
     url('/assets/chat.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* This makes the background image static */
   height: 500px;
   border-radius: 15px;
   background-blend-mode: overlay;
@@ -166,6 +169,7 @@
   scrollbar-width: none;
 }
 
+/* Scroll to Bottom Button */
 .scroll-to-bottom {
   font-size: 20px;
   cursor: pointer;
@@ -218,24 +222,18 @@
 
 /* For small devices (Mobile - Android) */
 @media screen and (max-width: 600px) {
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
   .chat-container {
     width: 100%;
     left: 0;
     top: 0;
-    height: calc(100vh - 60px); /* Adjusted height to leave space at the bottom */
+    height: 100vh; /* Full height */
     border-radius: 0;
     padding: 10px;
     box-sizing: border-box;
   }
 
   .messages-section {
-    height: calc(100vh - 120px); /* Adjusted to leave space for header and input, with some gap at the bottom */
+    height: calc(100vh - 120px); /* Adjust to leave space for header and input */
     overflow-y: scroll;
   }
 

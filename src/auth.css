@@ -5,6 +5,7 @@ html, body {
   padding: 0;
 }
 
+/* Auth Container with 10% space from bottom */
 .auth-container {
   position: relative;
   width: 100%;
@@ -12,16 +13,7 @@ html, body {
   overflow: hidden;
 }
 
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
+/* For all screens, leave 10% space from bottom */
 .auth-form {
   position: absolute;
   top: 50%;
@@ -33,67 +25,14 @@ html, body {
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  bottom: 10%;  /* This ensures 10% space from the bottom */
 }
 
-.auth-form h1 {
-  font-size: 2.1rem;
-  background: linear-gradient(90deg, #FFA500, #FF6347);
-  -webkit-background-clip: text;
-  color: transparent;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-  padding: 10px 0;
-}
-
-.auth-form h1:hover {
-  transform: scale(1.1);
-}
-
-.auth-button {
-  padding: 10px 20px;
-  background-color: #4285F4;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 100%;
-}
-
-.auth-button:hover {
-  background-color: #357AE8;
-}
-
-.error {
-  color: red;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-/* Lottie animation container */
-.lottie-container {
-  margin: 20px auto;
-  width: 100px;
-  height: 100px;
-}
-
-.auth-form p {
-  color: #FFA500;
-  font-family: 'Arial', sans-serif;
-  font-size: 10px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  line-height: 1.5;
-  transition: transform 0.3s ease-in-out;
-}
-
-.auth-form p:hover {
-  transform: scale(1.1);
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+/* Adjustments for mobile, tablet, and desktop */
+@media screen and (max-width: 768px) {
+  .auth-form {
+    bottom: 10%;
+  }
 }
 
 /* Media Queries for Responsiveness */
@@ -101,7 +40,7 @@ html, body {
 /* For larger screens (PC) */
 @media (min-width: 1024px) {
   .chat-container {
-    height: 100vh; /* Full viewport height */
+    height: calc(100vh - 10%); /* For larger screens, 10% space from the bottom */
     overflow-y: auto;
   }
 }
@@ -109,14 +48,14 @@ html, body {
 /* For tablet screens */
 @media (max-width: 1024px) {
   .chat-container {
-    height: 100vh; /* Full height on tablet */
+    height: calc(100vh - 10%); /* 10% space on tablet */
   }
 }
 
 /* For mobile screens */
 @media (max-width: 768px) {
   .chat-container {
-    height: 100vh; /* Full height on mobile */
+    height: calc(100vh - 10%); /* 10% space on mobile */
   }
 }
 
@@ -124,6 +63,7 @@ html, body {
 @media (max-width: 480px) {
   .auth-form {
     padding: 5px;
+    bottom: 10%;
   }
 
   .auth-form h1 {
@@ -133,4 +73,28 @@ html, body {
   .auth-button {
     font-size: 12px;
   }
+}
+
+/* User List Container */
+.user-list-container {
+  max-height: 200px; /* Adjust as needed */
+  overflow-y: auto; /* Allows scrolling */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.user-list-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* User Item */
+.user-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: #fff;
+  font-size: 14px;
+}
+
+.error {
+  color: red;
 }
